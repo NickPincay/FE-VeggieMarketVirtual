@@ -2,27 +2,28 @@
   <div class="container py-4 pb-2">
     <div class="row row-cols-3 align-items-center">
       <div class="col p-0">
-        <button 
-          type="button" 
-          class="border-0 d-flex p-0 align-items-center bg-transparent" 
-          data-bs-toggle="offcanvas" 
-          data-bs-target="#offcanvasWithBothOptions" 
-          aria-controls="offcanvasWithBothOptions">
+        <button type="button" class="border-0 d-flex p-0 align-items-center bg-transparent" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
           <mat-icon>menu</mat-icon>
           <p class="fw-bold m-0 mx-2">Menú</p>
         </button>
       </div>
-      <div class="col d-flex justify-content-center align-items-center">            
+      <div class="col d-flex justify-content-center align-items-center">
         <img src="../../../../favicon.ico" alt="Icono">
         <p class="fw-bold m-0 mx-2">Veggie Market</p>
       </div>
-      <div class="col p-0 text-end">
-        <button class="btn-custom shadow-sm"> Proveedor </button>
+      <div class="col p-0">
+        <button class="btn-custom float-end shadow-sm d-flex align-items-center" matBadge="8" matBadgePosition="before"
+          matBadgeColor="accent">
+          <mat-icon>shopping_cart</mat-icon>
+          <div class="vr"></div>
+          Checkout
+        </button>
       </div>
     </div>
     <div class="hr-custom mt-4"></div>
   </div>
-</div> 
+</div>
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
   <div class="offcanvas-header">
     <img class="img-nav" src="../../../../favicon.ico" alt="Icono">
@@ -37,14 +38,18 @@
       <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="">
         <mat-icon>home</mat-icon>Home
       </a>
-      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="/products">
+      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="/veggiemarket/products">
         <mat-icon>grass</mat-icon>Productos
       </a>
-      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="asesores">
-        <mat-icon>groups_2</mat-icon>Agricultores
+      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="/veggiemarket/providers">
+        <mat-icon>groups_2</mat-icon>Comunidad
       </a>
       <hr>
-      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="nosotros">
+      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="/auth/login-providers">
+        <mat-icon>manage_accounts</mat-icon>Area de Agricultores
+      </a>
+      <hr>
+      <a class="list-group-item list-group-item-action px-3 border-0 ripple" routerLink="">
         <mat-icon>contact_support</mat-icon>Conócenos
       </a>
     </div>
