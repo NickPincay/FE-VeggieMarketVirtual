@@ -13,23 +13,28 @@
     src: url('./assets/fonts/Gilroy-Light.otf');
 }
 
-*{
+* {
     font-family: 'Gilroy-Light', sans-serif;
 }
 
-html, body { 
-    height: 100%; 
+html,
+body {
+    height: 100%;
 }
 
-body { 
-    margin: 0; 
+body {
+    margin: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'wilkysta', sans-serif;
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Gilroy-ExtraBold', sans-serif;
 }
 

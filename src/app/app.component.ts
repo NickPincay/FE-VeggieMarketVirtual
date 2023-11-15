@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from './modules/shared/services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FE-VeggieMarketVirtual';
-  
+
+  constructor(private cartService: CartService) { }
+
+  ngOnInit() {
+    this.cartService.addStoredProducts(this.cartService.getStoredCartProducts());
+  }
+
 }

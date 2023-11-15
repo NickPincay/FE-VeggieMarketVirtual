@@ -35,5 +35,16 @@ export class AlertService {
       background: '#69AB3D'
     })
   }
-  
+
+  addCart() {
+    const options = {
+      icon: '<i class="material-icons">add_shopping_cart</i>',
+      background: '#ff5733',
+      dismissible: true,
+    };
+    this.notyf.open({
+      message: 'Producto agregado',
+      ...options,
+    });
+  }
 }

@@ -1,0 +1,82 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav shadow-none" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar class="toolbar-card h-auto justify-content-center">
+      <div class="card shadow rounded-3 border-0 mt-3">
+        <div class="card-border-top"></div>
+        <div class="img rounded-circle">
+          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-circle" alt="Avatar" />
+        </div>
+        <span class="text-uppercase"> admin</span>
+        <p class="job"> Nick Pincay </p>
+        <div class="card-border-bottom"></div>
+      </div>
+    </mat-toolbar>
+
+    <div class="px-4 py-3">
+      <hr>
+    </div>
+
+    <mat-nav-list>
+
+      <div class="container mt-0 mb-4">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>inventory_2</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+              <span>Productos</span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <button class="btn btn-sm btn-link" routerLink="/dashboard/table-products">
+            <mat-icon>settings</mat-icon> Gestionar
+          </button>
+          <button class="btn btn-sm btn-link" routerLink="/dashboard/table-discounts">
+            <mat-icon>redeem</mat-icon> Promoción
+          </button>
+        </mat-expansion-panel>
+      </div>
+
+      <div class="container">
+        <button class="btn btn-options" routerLink="/dashboard/table-providers">
+          <mat-icon>groups_2</mat-icon>
+          <span>Comunidad</span>
+        </button>
+      </div>
+
+      <div class="container">
+        <button class="btn btn-options" routerLink="/dashboard/table-billing">
+          <mat-icon>receipt_long</mat-icon>
+          <span>Facturas</span>
+        </button>
+      </div>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="overflow-hidden">
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="text-capitalize"> Bienvenido</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="">
+          <mat-icon>logout</mat-icon>
+          <span>Cerrar Sesión</span>
+        </button>
+      </mat-menu>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

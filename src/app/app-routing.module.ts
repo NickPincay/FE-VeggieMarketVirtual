@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardGuard } from './core/guards/card.guard';
+import { NavigatorComponent } from './modules/admins/page/navigator/navigator.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'veggiemarket', pathMatch: 'full' },
@@ -10,6 +12,21 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'billing',
+    loadChildren: () => import('./modules/billing/billing.module').then(m => m.BillingModule),
+    canActivate: [CardGuard]
+  },
+  {
+    path: 'dashboard',
+    component: NavigatorComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./modules/admins/admins.module').then(m => m.AdminsModule)
+      }
+    ]
   }
 ];
 

@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: '', component: HomePageComponent },
       { path: 'products', component: ProductsPageComponent },
       { path: 'providers', component: ProvidersPageComponent },
-      { path: "**", redirectTo: "home" }
+      { path: "**", redirectTo: "" }
     ]
   }
 ];

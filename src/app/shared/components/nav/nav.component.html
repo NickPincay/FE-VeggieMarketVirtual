@@ -13,8 +13,8 @@
         <p class="fw-bold m-0 mx-2">Veggie Market</p>
       </div>
       <div class="col p-0">
-        <button class="btn-custom float-end shadow-sm d-flex align-items-center" matBadge="8" matBadgePosition="before"
-          matBadgeColor="accent">
+        <button *ngIf="quantyProducts > 0" class="btn-custom float-end shadow-sm d-flex align-items-center"
+          matBadge="{{quantyProducts}}" matBadgePosition="before" matBadgeColor="accent" (click)="ckeckout()">
           <mat-icon>shopping_cart</mat-icon>
           <div class="vr"></div>
           Checkout

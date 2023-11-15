@@ -124,8 +124,18 @@ img {
     transform: translateY(-3px);
 }
 
-.f-price {
+.f-price span {
     font-family: 'Gilroy-ExtraBold', sans-serif;
+}
+
+.f-price .discounted-price {
+    font-family: 'Gilroy-Light', sans-serif;
+}
+
+.discounted-price {
+    text-decoration: line-through;
+    margin-right: 5px;
+    font-weight: 100;
 }
 
 .btn-dark {
