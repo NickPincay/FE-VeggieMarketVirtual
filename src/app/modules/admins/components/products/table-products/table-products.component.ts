@@ -18,7 +18,6 @@ export class TableProductsComponent implements OnInit {
 
   displayedColumns: string[] = ['nombre', 'categoria', 'precio', 'cantidad', 'accion'];
   dataSource = new MatTableDataSource<IProductoLocal>();
-  loading: boolean = false;
   id: number = 0
 
   constructor(
@@ -120,24 +119,6 @@ export class TableProductsComponent implements OnInit {
   private openDialog() {
     this.modal.nativeElement.classList.add('show');
     this.modal.nativeElement.style.display = 'block';
-  }
-
-  getColorClass(quantity: number): string {
-    if (quantity === 0) {
-      return 'bg-danger';
-    } else if (quantity < 5) {
-      return 'bg-warning';
-    } else {
-      return '';
-    }
-  }
-
-  getButtonColorClass(row: any): string {
-    if (row.cantidad >= 0 || row.cantidad <= 5) {
-      return 'btn-light';
-    } else {
-      return ''
-    }
   }
 
 }
